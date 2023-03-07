@@ -1,42 +1,47 @@
-# wisi-run-pytest README
+# WISI Run Pytest - A VS Code Extension
 
 This is a VS Code extension designed to mitigate the hassle and time-loss for WISI QA testing when running pytests for Regression.
 When enabled, the extension will display a button on the Status Bar which will allow you to run tests at the click of a button.
 
-## Features
+## Usage
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+To use the extension, all you need is to have an active python file open. 
+Once satisfied, a button will show up on the left side of your Status Bar, which you can click on after selecting test functions to run them.
 
-For example if there is an image subfolder under your extension project workspace:
+You can select a test by **setting your type cursor** on the definition line of a test:
+![Singe Test Demo](images/SingleTestDemo.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+Or by **highlighting** multiple test functions you would like to run:
+![Highlighted Test Demo](images/HighlightTestDemo.gif)
+(CTRL+A works to select all tests)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+There are two additional commands to ehance usage:
+- "Run Tests by Key Word Search" (ctrl+alt+k)
+- "Toggle Notification Mode"     (ctrl+alt+n)
+
+Both commands are accessible via the Command Pallette, or by the keyboard shortcuts listed next to them as well.
+
+**"Run Tests by Key Word Search"** enables you to enter a keyword which pytest will parse test functions to run with.
+For example, entering "telemetry" when prompted, will run all test functions with the string 'telemetry' in their function name.
+
+**"Toggle Notification Mode"** changes the way test-related notifications are displayed to you. When triggered, a VS Code notification will inform you of your
+updated settings. 
+- In "Pop-up Mode", a VS Code notification will appear informing you of the tests functions being run whenever you click the button.
+- In "Status Mode", a message will appear on the status bar showing the function names that are run. This will dismiss itself automatically in 7 seconds.
 
 ## Requirements
 
-This extension runs on VS Code version 1.74.0 and up, please ensure you are on a valid version of VS Code.
+This extension runs on VS Code version **1.74.0** and up, please ensure you are on a valid version of VS Code.
 
 Usage of the extension to run Regression tests require you to have a Virtual Environment activated prior to usage.
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+No known issues as of version 1.0.0
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
@@ -49,23 +54,9 @@ Initial release of WISI Run Pytest! Base functionality is fully complete, allowi
 
 ---
 
-## Following extension guidelines
+## Further Guidelines with WISI Workflow
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Ensure that you've read through the confluence page (linked below) for more details regarding usage with WISI code and firmware.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
