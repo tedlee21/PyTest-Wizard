@@ -1,6 +1,7 @@
 # wisi-run-pytest README
 
-This is the README for your extension "wisi-run-pytest". After writing up a brief description, we recommend including the following sections.
+This is a VS Code extension designed to mitigate the hassle and time-loss for WISI QA testing when running pytests for Regression.
+When enabled, the extension will display a button on the Status Bar which will allow you to run tests at the click of a button.
 
 ## Features
 
@@ -14,7 +15,9 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This extension runs on VS Code version 1.74.0 and up, please ensure you are on a valid version of VS Code.
+
+Usage of the extension to run Regression tests require you to have a Virtual Environment activated prior to usage.
 
 ## Extension Settings
 
@@ -37,15 +40,12 @@ Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
+Initial release of WISI Run Pytest! Base functionality is fully complete, allowing for a user to:
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Select pytest functions via highlighting or setting type cursor on definition line
+- Run selected functions via clicking a Status Bar item
+- Perform pytests via keyword search
+- Toggle the way test-related notifications are displayed
 
 ---
 
