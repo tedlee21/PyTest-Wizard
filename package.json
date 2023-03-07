@@ -24,7 +24,7 @@
         "title": "Run Tests by Key Word Search"
       }
     ],
-    "keybindings":[
+    "keybindings": [
       {
         "command": "wisi-run-pytest.toggleNotifications",
         "key": "ctrl+alt+n",
