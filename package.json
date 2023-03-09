@@ -1,8 +1,8 @@
 {
-  "name": "wisi-run-pytest",
-  "displayName": "WISI Run Pytest",
+  "name": "inca-qa-test-wizard",
+  "displayName": "Inca QA Test Wizard",
   "description": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -16,22 +16,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "wisi-run-pytest.toggleNotifications",
+        "command": "inca-qa-test-wizard.toggleNotifications",
         "title": "Toggle Notification Mode"
       },
       {
-        "command": "wisi-run-pytest.keySearch",
+        "command": "inca-qa-test-wizard.keySearch",
         "title": "Run Tests by Key Word Search"
       }
     ],
     "keybindings": [
       {
-        "command": "wisi-run-pytest.toggleNotifications",
+        "command": "inca-qa-test-wizard.toggleNotifications",
         "key": "ctrl+alt+n",
         "mac": "cmd+alt+n"
       },
       {
-        "command": "wisi-run-pytest.keySearch",
+        "command": "inca-qa-test-wizard.keySearch",
         "key": "ctrl+alt+k",
         "mac": "cmd+alt+k"
       }

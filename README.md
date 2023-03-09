@@ -1,6 +1,6 @@
-# WISI Run Pytest - A VS Code Extension
+# Inca QA Test Wizard - A VS Code Extension
 
-This is a VS Code extension designed to mitigate the hassle and time-loss for WISI QA testing when running pytests for Regression.
+This is a VS Code extension designed to mitigate the hassle and time-loss for Inca QA regression testing when running pytests for Regression.
 When enabled, the extension will display a button on the Status Bar which will allow you to run tests at the click of a button.
 
 ## Usage
@@ -45,7 +45,7 @@ No known issues as of version 1.0.0
 
 ### 1.0.0
 
-Initial release of WISI Run Pytest! Base functionality is fully complete, allowing for a user to:
+Initial release of Inca QA Test Wizard! Base functionality is fully complete, allowing for a user to:
 
 - Select pytest functions via highlighting or setting type cursor on definition line
 - Run selected functions via clicking a Status Bar item
@@ -54,9 +54,9 @@ Initial release of WISI Run Pytest! Base functionality is fully complete, allowi
 
 ---
 
-## Further Guidelines with WISI Workflow
+## Further Guidelines and Installation
 
-Ensure that you've read through the confluence page (linked below) for more details regarding usage with WISI code and firmware.
+Ensure that you've read through the confluence page (linked below) for more details regarding installation, and usage with WISI code and firmware.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Confluence Guide](https://incanetworks.atlassian.net/wiki/spaces/DTW/pages/2750251017/Inca+QA+Test+Wizard)
 

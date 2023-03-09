@@ -17,7 +17,7 @@ function displayNotification(message: string) {
 export function activate({ subscriptions }: vscode.ExtensionContext) {
 
 	// Toggle the way test running notifications are displayed
-	let notiDisposable = vscode.commands.registerCommand('wisi-run-pytest.toggleNotifications', () => {
+	let notiDisposable = vscode.commands.registerCommand('inca-qa-test-wizard.toggleNotifications', () => {
 		notificationMode = !notificationMode;
 		if (notificationMode) {
 			vscode.window.showInformationMessage('Notifications set to appear as popups.');
@@ -27,12 +27,12 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 	});
 
 	// register a command to run tests via keyword search
-	let keyDisposable = vscode.commands.registerCommand('wisi-run-pytest.keySearch', () => {
+	let keyDisposable = vscode.commands.registerCommand('inca-qa-test-wizard.keySearch', () => {
 		doKeySearch();
 	});	
 
 	// register a command that is invoked when the status bar item is selected
-	const runCommand = 'wisi-run-pytest.runTests';
+	const runCommand = 'inca-qa-test-wizard.runTests';
 	let runDisposable = vscode.commands.registerCommand(runCommand, () => {
 		const tests = getSelectedFunctions(vscode.window.activeTextEditor);
 		if (tests.length > 0) {
