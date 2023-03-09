@@ -1,3 +1,4 @@
+// copyright © 2023 WISI America. VS Code Extension to greatly simplify the running of QA python regression tests.
 import * as vscode from 'vscode';
 import * as path from 'path';
 
