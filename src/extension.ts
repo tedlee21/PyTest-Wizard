@@ -1,8 +1,13 @@
-// copyright © 2023 WISI America. VS Code Extension to greatly simplify the running of QA python regression tests.
+/* 
+Copyright © 2023 WISI America. 
+
+VS Code Extension to greatly simplify the running of QA python regression tests.
+*/
 import * as vscode from 'vscode';
 import * as path from 'path';
+import { updateStatusBarItem } from './updateStatusBar';
 
-let myStatusBarItem: vscode.StatusBarItem;
+export let myStatusBarItem: vscode.StatusBarItem;
 let notificationMode: boolean = true; // true = popup, false = status bar
 
 // Displays notifications to user based on notificationMode
@@ -32,7 +37,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		doKeySearch();
 	});	
 
-	// register a command that is invoked when the status bar item is selected
+	// register a command that runs when status bar item is clicked
 	const runCommand = 'inca-qa-test-wizard.runTests';
 	let runDisposable = vscode.commands.registerCommand(runCommand, () => {
 		const tests = getSelectedFunctions(vscode.window.activeTextEditor);
@@ -44,22 +49,21 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 	});
 
-	// create a new status bar item to manage
+	// create a new status bar item
 	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 300);
 	myStatusBarItem.command = runCommand;
 	myStatusBarItem.tooltip = 'Click to run selected tests';
 
-	// register some listener that make sure the status bar 
-	// item always up-to-date
+	// register some listeners to ensure all attributes are up to date
 	subscriptions.push(myStatusBarItem, runDisposable, notiDisposable, keyDisposable);
 	subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
 	subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBarItem));
 
-	// update status bar item once at start
+	// update the status bar item once at start
 	updateStatusBarItem();
 }
 
-// Set up a terminal, and runs pytest on selected functions
+// Sets up a terminal, and runs pytest on selected functions
 function runTests(tests: string[]) {
 	// create a terminal if none exists
 	const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
@@ -93,21 +97,8 @@ async function doKeySearch() {
 	}
 }
 
-// Updates the status bar item with the number of selected functions
-function updateStatusBarItem(): void {
-	const n = getSelectedFunctions(vscode.window.activeTextEditor);
-	if (n.length == 1) {
-		myStatusBarItem.text = `$(play) ${n} selected`;
-	} else if (n.length > 1) {
-		myStatusBarItem.text = `$(play) ${n.length} tests selected`;
-	} else {
-  	myStatusBarItem.text = `$(play) No tests selected`;
-  	}
-  	myStatusBarItem.show();
-}
-
 // Returns an array of selected function names
-function getSelectedFunctions(editor: vscode.TextEditor | undefined): Array<string> {
+export function getSelectedFunctions(editor: vscode.TextEditor | undefined): Array<string> {
 	let functions: Array<string> = [];
 
 	// if there is no selection, select the current line
@@ -121,7 +112,7 @@ function getSelectedFunctions(editor: vscode.TextEditor | undefined): Array<stri
 		return functions;
 }
 
-// parse function names from given string and return them as array
+// Parse function names from given string and return them as array
 function parseFunctionNames(str: string): string[] {
 	const lines = str.split(/\r?\n/g);
 	const functionNames = [];

@@ -4,7 +4,7 @@
   "description": "",
   "version": "1.0.0",
   "publisher": "WISI America",
-  "license": "MIT",
+  "license": "Repository contains code copyrighted by WISI America and others. See copyright notices posted on indiviual files.",
   "engines": {
     "vscode": "^1.74.0"
   },
