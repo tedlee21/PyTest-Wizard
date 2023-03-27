@@ -5,6 +5,9 @@
   "version": "1.0.0",
   "publisher": "WISI America",
   "license": "Repository contains code copyrighted by WISI America and others. See copyright notices posted on indiviual files.",
+  "author": {
+    "name": "John 'Ted' Lee"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },

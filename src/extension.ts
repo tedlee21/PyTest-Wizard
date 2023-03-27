@@ -1,4 +1,5 @@
 /* 
+Author: John "Ted" Lee
 Copyright © 2023 WISI America. 
 
 VS Code Extension to greatly simplify the running of QA python regression tests.
