@@ -52,11 +52,3 @@ Initial release of Inca QA Test Wizard! Base functionality is fully complete, al
 - Perform pytests via keyword search
 - Toggle the way test-related notifications are displayed
 
----
-
-## Further Guidelines and Installation
-
-Ensure that you've read through the confluence page for more details regarding installation, and usage with WISI code and firmware.
-
-* [Confluence Guide](https://incanetworks.atlassian.net/wiki/spaces/DTW/pages/2750251017/Inca+QA+Test+Wizard)
-
