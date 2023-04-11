@@ -1,3 +1,4 @@
 This repository contains code copyrighted by WISI America and others. 
-
-See copyright notices posted on indiviual files.
+Code marked as copyright WISI America is offered under the Mozilla Public License v2.0.
+Code marked as copyrighted by others is offered under the licenses indicated in those files.
+See copyright notices posted in indiviual files.
