@@ -2,7 +2,7 @@
 Author: John "Ted" Lee
 Copyright © 2023 WISI America. 
 
-VS Code Extension to greatly simplify the running of QA python regression tests.
+VS Code Extension to greatly simplify the running of QA Python regression tests.
 */
 import * as vscode from 'vscode';
 import * as path from 'path';
@@ -33,12 +33,12 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 	});
 
-	// register a command to run tests via keyword search
+	// Register a command to run tests via keyword search
 	let keyDisposable = vscode.commands.registerCommand('inca-qa-test-wizard.keySearch', () => {
 		doKeySearch();
 	});	
 
-	// register a command that runs when status bar item is clicked
+	// Register a command that runs when status bar item is clicked
 	const runCommand = 'inca-qa-test-wizard.runTests';
 	let runDisposable = vscode.commands.registerCommand(runCommand, () => {
 		const tests = getSelectedFunctions(vscode.window.activeTextEditor);
@@ -50,23 +50,23 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 		}
 	});
 
-	// create a new status bar item
+	// Create a new status bar item
 	myStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 300);
 	myStatusBarItem.command = runCommand;
 	myStatusBarItem.tooltip = 'Click to run selected tests';
 
-	// register some listeners to ensure all attributes are up to date
+	// Register some listeners to ensure all attributes are up to date
 	subscriptions.push(myStatusBarItem, runDisposable, notiDisposable, keyDisposable);
 	subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
 	subscriptions.push(vscode.window.onDidChangeTextEditorSelection(updateStatusBarItem));
 
-	// update the status bar item once at start
+	// Update the status bar item once at start
 	updateStatusBarItem();
 }
 
 // Sets up a terminal, and runs pytest on selected functions
 function runTests(tests: string[]) {
-	// create a terminal if none exists
+	// Create a terminal if none exists
 	const terminal = vscode.window.activeTerminal || vscode.window.createTerminal();
 	terminal.show();
 	const editor = vscode.window.activeTextEditor;
@@ -102,7 +102,7 @@ async function doKeySearch() {
 export function getSelectedFunctions(editor: vscode.TextEditor | undefined): Array<string> {
 	let functions: Array<string> = [];
 
-	// if there is no selection, select the current line
+	// If there is no selection, select the current line
 	if (editor && editor.selection.isEmpty) {
 		const position = editor.selection.active;
 		const line = editor.document.lineAt(position).range;
@@ -117,6 +117,8 @@ export function getSelectedFunctions(editor: vscode.TextEditor | undefined): Arr
 function parseFunctionNames(str: string): string[] {
 	const lines = str.split(/\r?\n/g);
 	const functionNames = [];
+	
+	// Match lines starting with 'def test_'
 	for (const line of lines) {
 		const match = line.match(/^def (test\w+)/);
 		if (match) {
@@ -126,5 +128,5 @@ function parseFunctionNames(str: string): string[] {
 	return functionNames;
 }
 
-// This method is called when your extension is deactivated
+// This method is called when extension is deactivated
 export function deactivate() {}
