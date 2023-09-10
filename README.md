@@ -1,6 +1,7 @@
 # Inca QA Test Wizard - A VS Code Extension
 
-This is a VS Code extension designed to mitigate the hassle and time-loss for Inca QA regression testing when running pytests for Regression.
+This is a *VS Code* extension designed and developed by John (Ted) Lee during his internship at WISI America, in order to mitigate the hassle and time-loss for WISI Inca QA regression testing when developing and running pytests for Regression.
+
 When enabled, the extension will display a button on the Status Bar which will allow you to run tests at the click of a button.
 
 ## Usage
