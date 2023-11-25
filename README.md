@@ -4,6 +4,9 @@ This is a *VS Code* extension designed and developed by John (Ted) Lee during hi
 
 When enabled, the extension will display a button on the Status Bar which will allow you to run tests at the click of a button.
 
+*Note that this is a fork of the original open source repository: [here](https://github.com/incanetworks/inca-qa-test-wizard)
+
+
 ## Usage
 
 To use the extension, all you need is to have an active python file open. 
